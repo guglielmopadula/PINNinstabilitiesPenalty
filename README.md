@@ -23,12 +23,12 @@ The theoretical motivations are the following:
 It can be proven that the system above is equivalent to:
 
 $$\begin{cases}
-
 \Delta \bar{u}(x,y)-\nabla p(x,y)=-\frac{12}{(0.41)^{2}}xe_{1} & (x,y)\in (0,2)\times (0,0.41)  \\
 \nabla \cdot \bar{u}(x,y) = 0  \\
 \bar{u}(x,0)=\bar{u}(x,0.41)=0 & x \in [0,2]\\
 \bar{u}(0,y)=\bar{u}(2,y)=0 & x \in [0,2]
 \end{cases}$$
+
 with $$\bar{u}=u-[\frac{6y(0.41-y)}{(0.41)^{2}},0]$$
 It can be proven that $\bar{u}$ is the solution of
 the functional minimization problem
