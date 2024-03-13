@@ -6,7 +6,7 @@ $$\begin{cases}
 \Delta u(x,y)-\nabla p(x,y)=0 & (x,y)\in (0,2)\times (0,0.41)  \\
 \nabla \cdot u(x,y) = 0  & (x,y)\in (0,2)\times (0,0.41)\\
 u(x,0)=u(x,0.41)=0 & x \in [0,2]\\
-u(0,y)=u(2,y)=6y\frac{(0.41-y)}{(0.41)^{2}} & x \in [0,2]\\
+u(0,y)=u(2,y)=6y\frac{(0.41-y)}{(0.41)^{2}} & y \in [0,0.41]\\
 \end{cases}$$
 
 This system has an unique solution:
@@ -54,5 +54,5 @@ A (partial) solution is to use [penalty methods](https://www.jstor.org/stable/21
 $$\begin{cases}
 \Delta u_{\epsilon}(x,y)+\frac{1}{\epsilon}\nabla div(u_{\epsilon}) =0 & (x,y)\in (0,2)\times (0,0.41)  \\
 u(x,0)=u(x,0.41)=0 & x \in [0,2]\\
-u(0,y)=u(2,y)=6y\frac{(0.41-y)}{(0.41)^{2}} & x \in [0,2]\\
+u(0,y)=u(2,y)=6y\frac{(0.41-y)}{(0.41)^{2}} & y \in [0,0.41]\\
 \end{cases}$$
