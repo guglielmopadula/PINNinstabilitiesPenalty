@@ -1,12 +1,14 @@
 # PINN and the Penalty Method
 
 This is a repo for studyng the stability of the PINN training following steady stokes equation
+
 $$\begin{cases}
 \Delta u(x,y)-\nabla p(x,y)=0 & (x,y)\in (0,2)\times (0,0.41)  \\
 \nabla \cdot u(x,y) = 0  & (x,y)\in (0,2)\times (0,0.41)\\
 u(x,0)=u(x,0.41)=0 & x \in [0,2]\\
 u(0,y)=u(2,y)=6y\frac{(0.41-y)}{(0.41)^{2}} & x \in [0,2]\\
 \end{cases}$$
+
 This system has an unique solution:
 $$u(x,y)=[\frac{6y(0.41-y)}{(0.41)^{2}},0]$$
 $$p(x,y)=-\frac{12}{(0.41)^{2}}x$$
@@ -31,7 +33,7 @@ with $$\bar{u}=u-[\frac{6y(0.41-y)}{(0.41)^{2}},0]$$
 It can be proven that $\bar{u}$ is the solution of
 the functional minimization problem
 
-$$\min \int(|\nabla u|^2-2 (\nabla f \cdot \nabla u)) d x d y \quad \text{subject to} \operatorname{div} u=0$$
+$$\min \int(|\nabla u|^2-2 (\nabla f \cdot \nabla u)) d x d y \quad \text{subject to} div(u)=0$$
 and so that the stokes equations are exactly the Lagrange Multiplier equations associated to the minimization problem. 
 
 So, from the Lagrange Multiplier equations we know that the solution is a saddle point problem, which can be hard to reach with local optimization methods if the initial point is on a "maximization curve".
@@ -50,7 +52,7 @@ $$L(v,q)= \int (v\cdot v- q \cdot div(v)-f\cdot v)dxdy $$
 A (partial) solution is to use [penalty methods](https://www.jstor.org/stable/2158403), i.e to solve
 
 $$\begin{cases}
-\Delta u_{\epsilon}(x,y)+\frac{1}{\epsilon}\nabla \operatorname{div}(u_{\epsilon}) =0 & (x,y)\in (0,2)\times (0,0.41)  \\
+\Delta u_{\epsilon}(x,y)+\frac{1}{\epsilon}\nabla div(u_{\epsilon}) =0 & (x,y)\in (0,2)\times (0,0.41)  \\
 u(x,0)=u(x,0.41)=0 & x \in [0,2]\\
 u(0,y)=u(2,y)=6y\frac{(0.41-y)}{(0.41)^{2}} & x \in [0,2]\\
 \end{cases}$$
